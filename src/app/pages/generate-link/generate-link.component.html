@@ -1,0 +1,18 @@
+<div class="generate-link-container">
+  <h2>Generate Assessment Links for {{ accountCode }}</h2>
+  <input type="number" [(ngModel)]="noOfUsers" min="1" placeholder="Number of Users" />
+  <button (click)="generateLinks()">Generate</button>
+
+  <table *ngIf="users.length">
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.UserName }}</td>
+      <td>{{ user.Password }}</td>
+    </tr>
+  </table>
+
+  <p class="error">{{ errorMessage }}</p>
+</div>

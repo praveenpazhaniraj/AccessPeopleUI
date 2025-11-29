@@ -1,0 +1,16 @@
+<div class="tests-container">
+  <h2>Assessment Tests</h2>
+  <table>
+    <tr>
+      <th>Account Name</th>
+      <th>Account Code</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let test of tests">
+      <td>{{ test.Account_Name }}</td>
+      <td>{{ test.Account_Code }}</td>
+      <td><button (click)="generateLink(test.Account_Code)">Generate Link</button></td>
+    </tr>
+  </table>
+  <p class="error">{{ errorMessage }}</p>
+</div>
