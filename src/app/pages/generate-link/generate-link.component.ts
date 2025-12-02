@@ -23,7 +23,7 @@ export class GenerateLinkComponent implements OnInit {
     const token = localStorage.getItem('token');
     if (!token) { this.errorMessage = 'No token found'; return; }
 
-    this.api.generateAssessmentLink(this.accountCode, this.noOfUsers).subscribe({
+    this.api.generateAssessmentLink("",this.accountCode, this.noOfUsers).subscribe({
       next: (res: any) => this.users = res.UserTable,
       error: () => this.errorMessage = 'Failed to generate links'
     });

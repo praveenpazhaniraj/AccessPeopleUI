@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: 'auth', component: AuthComponent },
   { path: 'tests', component: TestsComponent },
-  { path: 'generate-link/:accountCode', component: GenerateLinkComponent },
+  { path: 'generate-link', component: GenerateLinkComponent },
   { path: '**', redirectTo: 'auth' }
 ];
 

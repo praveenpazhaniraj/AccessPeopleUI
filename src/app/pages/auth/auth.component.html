@@ -1,26 +1,24 @@
-<div style="max-width: 500px; margin: auto; padding: 30px; border: 10px solid #ccc; border-radius: 10px;">
-  <h2 style="text-align: center;">Login</h2>
-  <form (ngSubmit)="login()">
+<div class="login-page">
+  <div class="login-card">
+    <h2 class="login-title">Welcome Back!</h2>
 
-    <div style="margin-bottom: 15px;">
-      <label for="clientId" style="display: block; margin-bottom: 5px;">Client ID:</label>
-      <input id="clientId" type="text" [(ngModel)]="clientId" name="clientId" required
-             style="width: 100%; padding: 8px; box-sizing: border-box;" />
-    </div>
+    <form (ngSubmit)="login()">
+      <div class="input-group">
+        <label for="clientId">Client ID:</label>
+        <input id="clientId" type="text" [(ngModel)]="clientId" name="clientId" required />
+      </div>
 
-    <div style="margin-bottom: 15px;">
-      <label for="clientSecret" style="display: block; margin-bottom: 5px;">Client Secret:</label>
-      <input id="clientSecret" type="password" [(ngModel)]="clientSecret" name="clientSecret" required
-             style="width: 100%; padding: 8px; box-sizing: border-box;" />
-    </div>
+      <div class="input-group">
+        <label for="clientSecret">Client Secret:</label>
+        <input id="clientSecret" type="password" [(ngModel)]="clientSecret" name="clientSecret" required />
+      </div>
 
-    <div *ngIf="errorMessage" style="margin-bottom: 15px;">
-      <p style="color: red; margin: 0;">{{ errorMessage }}</p>
-    </div>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
 
-    <div style="text-align: center;">
-      <button type="submit" style="padding: 10px 20px;">Login</button>
-    </div>
-
-  </form>
+      <button type="submit" class="login-btn">Login</button>
+      <p class="note">Enter your credentials to access the assessment portal</p>
+    </form>
+  </div>
 </div>

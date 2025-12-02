@@ -1,16 +1,31 @@
-<div class="tests-container">
-  <h2>Assessment Tests</h2>
-  <table>
-    <tr>
-      <th>Account Name</th>
-      <th>Account Code</th>
-      <th>Action</th>
-    </tr>
-    <tr *ngFor="let test of tests">
-      <td>{{ test.Account_Name }}</td>
-      <td>{{ test.Account_Code }}</td>
-      <td><button (click)="generateLink(test.Account_Code)">Generate Link</button></td>
-    </tr>
-  </table>
-  <p class="error">{{ errorMessage }}</p>
+<div class="page-container">
+  <div class="card">
+
+    <h2 class="card-title">Assessment Tests</h2>
+
+    <form>
+      <table class="tests-table">
+        <thead>
+          <tr>
+            <th>Account Name</th>
+            <th>Account Code</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let test of tests" class="table-row">
+            <td>{{ test.Account_Name }}</td>
+            <td>{{ test.Account_Code }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <div class="next-btn-container">
+      <button (click)="goNext()" class="next-btn">Next →</button>
+    </div>
+
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  </div>
 </div>

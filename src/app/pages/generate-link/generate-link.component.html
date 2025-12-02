@@ -1,18 +1,64 @@
-<div class="generate-link-container">
-  <h2>Generate Assessment Links for {{ accountCode }}</h2>
-  <input type="number" [(ngModel)]="noOfUsers" min="1" placeholder="Number of Users" />
-  <button (click)="generateLinks()">Generate</button>
+<div class="page-container">
+  <div class="card">
 
-  <table *ngIf="users.length">
-    <tr>
-      <th>Username</th>
-      <th>Password</th>
-    </tr>
-    <tr *ngFor="let user of users">
-      <td>{{ user.UserName }}</td>
-      <td>{{ user.Password }}</td>
-    </tr>
-  </table>
+    <h2 class="card-title">Generate Assessment Links</h2>
 
-  <p class="error">{{ errorMessage }}</p>
+    <form (ngSubmit)="generateLinks()">
+      <!-- Account Code Input -->
+      <div class="input-section">
+        <label for="accountCode" class="input-label">Account Code:</label>
+        <input id="accountCode" type="text" [(ngModel)]="accountCode" name="accountCode"
+               placeholder="Enter account code" class="user-input" required />
+      </div>
+
+      <!-- Number of Users Input -->
+      <div class="input-section">
+        <label for="noOfUsers" class="input-label">Number of Users:</label>
+        <input id="noOfUsers" type="number" [(ngModel)]="noOfUsers" name="noOfUsers" min="1"
+               placeholder="Enter number of users" class="user-input" required />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="generate-btn">Generate</button>
+      </div>
+    </form>
+
+    <!-- Generated Users Table -->
+    <table *ngIf="users.length" class="users-table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.UserName }}</td>
+          <td>{{ user.Password }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- SIMPLE CLICKABLE URL (NO TS NEEDED) -->
+    <div *ngIf="users.length" style="margin-top: 20px; text-align:center;">
+      <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">Assessment Link:</p>
+
+      <a href="https://www.assesspeople.com/assessmentv6/Test"
+         target="_blank"
+         style="
+           display:inline-block;
+           padding: 10px 20px;
+           background: #007bff;
+           color: white;
+           text-decoration: none;
+           border-radius: 6px;
+           font-size: 16px;
+         ">
+        Click Here to Continue →
+      </a>
+    </div>
+
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  </div>
 </div>

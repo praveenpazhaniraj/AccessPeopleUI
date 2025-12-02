@@ -1,0 +1,112 @@
+/* Full page container with gradient background */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #f3f7fd, #e2f0fb);
+  font-family: Arial, sans-serif;
+}
+
+/* Card */
+.card {
+  width: 50%;
+  max-width: 1200px;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+/* Card title */
+.card-title {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+/* Table */
+.tests-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+  .tests-table th {
+    padding: 16px;
+    background: linear-gradient(to right, #a8edea, #fed6e3);
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+    .tests-table th:first-child {
+      border-top-left-radius: 10px;
+    }
+
+    .tests-table th:last-child {
+      border-top-right-radius: 10px;
+    }
+
+.table-row {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+  .table-row:hover {
+    background: #f0f8ff;
+  }
+
+.tests-table td {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Next button */
+.next-btn-container {
+  margin-top: 30px;
+}
+
+.next-btn {
+  padding: 14px 35px;
+  font-size: 18px;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  cursor: pointer; 
+  transition: background 0.3s, transform 0.2s;
+}
+
+  .next-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .next-btn:active {
+    transform: translateY(1px);
+  }
+
+ 
+/* Error message */
+.error-message {
+  margin-top: 25px;
+  color: #d9534f;
+  font-weight: 600;
+  font-size: 16px;
+}

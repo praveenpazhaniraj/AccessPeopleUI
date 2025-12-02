@@ -13,20 +13,34 @@ export class TestsComponent implements OnInit {
 
   constructor(private api: ApiService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     const token = this.api.getToken();
+
+    // If no token → return to login
     if (!token) {
       this.router.navigate(['/auth']);
       return;
     }
 
+    // If token exists, fetch tests
     this.api.fetchAssessmentTests(token).subscribe({
-      next: (res) => (this.tests = res),
-      error: () => (this.errorMessage = 'Failed to fetch tests'),
+      next: (res) => {
+        this.tests = res;
+      },
+      error: (err) => {
+        if (err.status === 401) {
+          this.errorMessage = "Token expired or invalid.";
+          localStorage.removeItem("token");
+          this.router.navigate(['/auth']);
+        } else {
+          this.errorMessage = "Failed to load tests.";
+        }
+      }
     });
   }
 
-  generateLink(accountCode: string) {
-    this.router.navigate(['/generate-link', accountCode]);
+  goNext() {
+    this.router.navigate(['/generate-link']);
   }
+ 
 }

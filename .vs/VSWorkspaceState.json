@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\pages\\auth",
-    "\\src\\app\\services"
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\generate-link",
+    "\\src\\app\\pages\\tests"
   ],
-  "SelectedNode": "\\src\\app\\services\\api.service.ts",
+  "SelectedNode": "\\src\\app\\pages\\generate-link\\generate-link.component.html",
   "PreviewInSolutionExplorer": false
 }
